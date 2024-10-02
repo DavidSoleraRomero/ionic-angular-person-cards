@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +31,9 @@ export class HomePage {
     { name: 'Javier', surnames: 'Moreno Sánchez', age: 27 }
   ];
 
-  constructor() {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+  ) {}
 
 }
 
