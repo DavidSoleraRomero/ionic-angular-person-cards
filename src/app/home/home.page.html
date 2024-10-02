@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Persons cards
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,11 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <h1>Persons cards</h1>
   
+  <app-data-input (addPerson)="addPerson($event)"></app-data-input>
+
   <div class="my-card-group">
     <app-personal-card *ngFor="let person of persons"
       [name]="person.name"

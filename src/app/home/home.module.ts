@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { PersonalCardComponent } from '../personal-card/personal-card.component';
+import { DataInputComponent } from '../data-input/data-input.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PersonalCardComponent } from '../personal-card/personal-card.component'
   ], 
   declarations: [
     HomePage,
-    PersonalCardComponent
+    PersonalCardComponent,
+    DataInputComponent
   ]
 })
 export class HomePageModule {}
