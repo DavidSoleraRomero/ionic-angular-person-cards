@@ -25,3 +25,11 @@
 #container a {
   text-decoration: none;
 }
+
+.my-card-group {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

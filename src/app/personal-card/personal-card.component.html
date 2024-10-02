@@ -1,0 +1,19 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <div class="icon-name">
+        <ion-icon name="person-circle-outline" class="icon-size"></ion-icon>
+        {{ name }} {{ surnames | slice:0:1 | uppercase }}.
+      </div>
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <h2><b>Nombre</b></h2>
+    <p>{{ name }}</p>
+    <h2><b>Apellidos</b></h2>
+    <p>{{ surnames }}</p>
+    <h2><b>Edad</b></h2>
+    <p>{{ age }}</p>
+  </ion-card-content>
+</ion-card>
