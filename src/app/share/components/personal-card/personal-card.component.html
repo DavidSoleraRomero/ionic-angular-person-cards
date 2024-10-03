@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <div class="space-between align-center d-flex-row">
+        <div class="align-center d-flex-row">
+          <ion-icon name="person-circle-outline" class="icon-size"></ion-icon>
+          {{ name }} {{ surnames | slice:0:1 | uppercase }}.
+        </div>
+        <div class="align-center d-flex-row">
+          <ion-button (click)="deleteCard()" fill="clear" size="small">
+            <ion-icon class="cursor-pointer trash" color="warning" name="trash-outline"></ion-icon>
+          </ion-button> 
+          <ion-button (click)="favClicked()" fill="clear">
+            <ion-icon  name="heart"         color="danger" size="small" *ngIf="isFav" ></ion-icon>
+            <ion-icon  name="heart-outline" color="medium" size="small" *ngIf="!isFav"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <h2><b>Name</b></h2>
+    <p>{{ name }}</p>
+    <h2><b>Surnames</b></h2>
+    <p>{{ surnames }}</p>
+    <h2><b>Age</b></h2>
+    <p>{{ age }}</p>
+  </ion-card-content>
+</ion-card>

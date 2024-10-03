@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { PersonalCardComponent } from '../personal-card/personal-card.component';
-import { DataInputComponent } from '../data-input/data-input.component';
+import { ShareModule } from '../share/share.module';
 
 
 @NgModule({
@@ -14,12 +13,11 @@ import { DataInputComponent } from '../data-input/data-input.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ShareModule
   ], 
   declarations: [
     HomePage,
-    PersonalCardComponent,
-    DataInputComponent
   ]
 })
 export class HomePageModule {}

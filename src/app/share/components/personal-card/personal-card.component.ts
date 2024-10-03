@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-personal-card',
@@ -10,9 +10,20 @@ export class PersonalCardComponent  implements OnInit {
   @Input() name    : string = "";
   @Input() surnames: string = "";
   @Input() age     : number = 0;
+  @Input() isFav   : boolean = false;
+  @Output() makeFav = new EventEmitter<boolean>;
+  @Output() deleteCardEvent = new EventEmitter;
 
   constructor() { }
 
   ngOnInit() {}
+
+  favClicked() {
+    this.makeFav.emit(!this.isFav);
+  }
+
+  deleteCard() {
+    this.deleteCardEvent.emit();
+  }
 
 }

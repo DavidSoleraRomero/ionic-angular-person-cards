@@ -1,4 +1,6 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { PersonCard } from '../share/interfaces/person-card';
+import { PeopleCardsService } from '../share/services/people-cards.service';
 
 @Component({
   selector: 'app-home',
@@ -7,24 +9,21 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 })
 export class HomePage {
 
-  persons: Person[] = [
-    { name: 'Juan', surnames: 'Pérez', age: 30 },
-    { name: 'María', surnames: 'González López', age: 25 },
-    { name: 'Carlos', surnames: 'López Pepo', age: 35 }
-  ];
-
   constructor(
-    private cdr: ChangeDetectorRef,
+    protected peopleCardsService: PeopleCardsService
   ) {}
 
-  addPerson(person: Person) {
-    this.persons.push(person);
+  addPerson(personCard: PersonCard) {
+    this.peopleCardsService.add(personCard);
   }
 
-}
+  alterFav(state: boolean, index: number) {
+    this.peopleCardsService.alterFav(state, index);
+  }
 
-export interface Person {
-  name: string;
-  surnames: string;
-  age: number;
+  deleteCard(index: number) {
+    if (window.confirm("¿Seguro que desa borrar a esa persona?"))
+      this.peopleCardsService.remove(index);
+  }
+
 }

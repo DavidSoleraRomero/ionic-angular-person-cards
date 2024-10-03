@@ -1,0 +1,24 @@
+ion-card {
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.icon-size {
+    font-size: 48px;
+    padding-right: 5px;
+}
+
+.d-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.align-center {align-items: center}
+
+.space-between {justify-content: space-between}
+
+.cursor-pointer {cursor: pointer;}
+
+ion-button:hover {
+  --background: rgba(145, 144, 143, 0.35);
+}   

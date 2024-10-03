@@ -18,10 +18,14 @@
   <app-data-input (addPerson)="addPerson($event)"></app-data-input>
 
   <div class="my-card-group">
-    <app-personal-card *ngFor="let person of persons"
+    <app-personal-card *ngFor="let person of peopleCardsService.getObservable() | async ; let index = index"
       [name]="person.name"
       [surnames]="person.surnames" 
-      [age]="person.age">
+      [age]="person.age"
+      [isFav]="person.isFav"
+      (makeFav)="alterFav($event, index)"
+      (deleteCardEvent)="deleteCard(index)">
+
     </app-personal-card>
   </div>
   
